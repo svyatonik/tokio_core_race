@@ -1,0 +1,22 @@
+[package]
+name = "christmas_issue_test"
+version = "0.1.0"
+authors = ["Svyatoslav Nikolsky <svyatonik@gmail.com>"]
+
+[dependencies]
+mio = "0.6.2"
+tokio-core = "0.1.3"
+time = "0.1"
+parking_lot = "0.3.6"
+
+[replace]
+"mio:0.6.2" = { path = "/home/svyatonik/dev/overrides/mio" }
+"tokio-core:0.1.3" = { path = "/home/svyatonik/dev/overrides/tokio-core" }
+
+[profile.release]
+debug = true
+panic = 'abort'
+
+[[bin]]
+path = "src/main.rs"
+name = "test"
